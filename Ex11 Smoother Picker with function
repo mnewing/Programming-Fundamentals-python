@@ -1,0 +1,40 @@
+# this code enhances you smoother picker code
+# create a function which will receive a list and return the idex of the item selected by the user
+# use this function to allow the user to select from the different lists
+# a function that does the selection processes will simplify your code
+
+
+#=================
+#possible solution
+
+
+# display the menu options
+# inputs:
+#   the list with the users choices
+#   prompt message to show the user
+# return: the index of the users choice as int
+def get_choice(options, msg):
+    counter = 0
+    while counter < len(options):
+        print(counter, options[counter])
+        counter = counter + 1
+    return int(input("please choose your "+msg+" "))
+
+#start point of the program
+#setup our smoothie options
+base = ["milk", "ice", "coconut milk"]
+fruits = ["apple", "banana", "line", "ginger", "orange"]
+
+#let them choose their smoothie option
+baseChoice = get_choice(base, "smoothie base")
+
+#choose their 1st fruit
+f1Choice = get_choice(fruits, "1st fruit")
+
+#choose the 2nd fruit
+f2Choice = get_choice(fruits, "2nd fruit")
+
+#display final choice
+#print("You have chosen "+str(baseChoice)+" with "+str(f1Choice)+" and "+str(f2Choice))
+print("You have chosen "+base[baseChoice]+" with "+fruits[f1Choice]+" and "+fruits[f2Choice])
+
