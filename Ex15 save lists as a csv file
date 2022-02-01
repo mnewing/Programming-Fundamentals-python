@@ -1,0 +1,29 @@
+#create two lists to store some data and them write them out to a csv file
+
+fruit = ["apple", "banana", "cherry"]
+quantity = [20, 30, 300]
+choice  = 'a'
+
+while choice != 'x':
+    choice = input("a - display fruit, d - display as table, x - exit >> ")
+    if choice == 'a':
+        print(fruit)
+    elif choice == 'd':
+        x = 0
+        while x < 3:
+            x = x +1
+            print(fruit[x], end =" ")
+            print(' : ', end =" ")
+            print(quantity[x])
+
+#save the data out to a file
+file_name = "fruit.txt"
+f = open(file_name, "w")
+x = 0
+while x < 3:
+    f.write(fruit[x])
+    f.write(' ')
+    f.write(str(quantity[x]))
+    f.write("\r\n")
+    x = x +1
+f.close()
